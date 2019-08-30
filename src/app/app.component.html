@@ -1,0 +1,29 @@
+<div class="sample" fxLayout="column">
+  <mat-card fxFlex="1 1 auto" fxLayout="column">
+    <h2 class="mat-h2">Form Array Sample</h2>
+    <p class="mat-body-1">
+      Code for the blog post <a href="https://www.usefuldev.com/post/Angular%20reactive%20forms:%20FormArrays%20with%20OnPush%20change%20detection" target="_blank" rel="noopener noreferrer">Angular reactive forms: FormArrays with OnPush change detection</a>
+    </p>
+    <p class="mat-body-1">
+      Click the load button to add some things to the array or use the add
+      button to add a new thing.
+    </p>
+    <div fxFlex="1 1 auto" fxLayoutGap="12px">
+      <button mat-raised-button (click)="load()" color="primary">load</button>
+      <button mat-raised-button (click)="reset()" color="primary">reset</button>
+      <mat-slide-toggle (click)="toggleDisable()">disable</mat-slide-toggle>
+    </div>
+  </mat-card>
+  <mat-card fxLayout="row" fxFlex="1 1 auto" fxLayoutGap="12px">
+    <mat-card fxFlex="1 1 70%">
+      <h2 class="mat-h2">Things Form</h2>
+      <form [formGroup]="formGroup">
+        <app-things [formArray]="formGroup.get('things')"></app-things>
+      </form>
+    </mat-card>
+    <mat-card fxFlex="1 1 30%">
+      <h2 class="mat-h2">Form Values</h2>
+      {{ formGroup.getRawValue() | json }}
+    </mat-card>
+  </mat-card>
+</div>

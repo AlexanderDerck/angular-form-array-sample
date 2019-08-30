@@ -1,0 +1,6 @@
+.sample1 {
+  margin: 12px;
+}
+.sample1 > .mat-card {
+  margin:12px
+}

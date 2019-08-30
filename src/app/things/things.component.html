@@ -1,0 +1,8 @@
+<mat-card class="things" fxLayout="column" fxLayoutGap="12px">
+	<app-thing fxFlex="1 1 auto" *ngFor="let thingFormGroup of formArray.controls; let i = index" (remove)="remove($event)"
+	 [formGroup]="thingFormGroup">
+	</app-thing>
+	<button fxFlexAlign="end" mat-raised-button (click)="add()" [disabled]="formArray.disabled" color="primary">
+    add
+  </button>
+</mat-card>
